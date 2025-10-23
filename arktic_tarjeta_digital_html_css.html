@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arktic • Tarjeta digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --card-w: 360px;
+      --radius: 28px;
+      --accent: #0F6EA6;
+      --accent-2: #0DB0D9;
+      --text: #22334A;
+      --muted: #5E6A7A;
+      --shadow: 0 20px 55px rgba(0,0,0,.18), 0 8px 20px rgba(0,0,0,.08);
+      --bg-gradient: radial-gradient(120% 100% at 0% 0%, rgba(255,255,255,.75) 0%, rgba(245,249,255,.8) 45%, rgba(236,241,248,.9) 100%);
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      display:grid;
+      place-items:center;
+      background:#f3f6fb;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text);
+    }
+    .card{
+      width:min(92vw, var(--card-w));
+      border-radius: var(--radius);
+      background: var(--bg-gradient);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      isolation:isolate;
+    }
+    .banner{
+      position:relative;
+      height: 150px;
+      background-image: url("./assets/headerarktic.jpg");
+      background-size: cover;
+      background-position: center;
+      border-top-left-radius: var(--radius);
+      border-top-right-radius: var(--radius);
+    }
+    .banner::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,0) 60%);
+      pointer-events:none;
+    }
+    .logo{
+      position:absolute; top:14px; right:16px;
+      font-weight:800; letter-spacing:.5px;
+      color:#fff;
+      text-transform:uppercase;
+      font-size: 20px;
+      display:flex; align-items:center; gap:4px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.35);
+    }
+    .logo::after{
+      content:""; width:8px; height:8px; border-radius:50%; background:var(--accent-2);
+      display:inline-block; margin-left:4px;
+    }
+    .avatar-wrap{
+      position:relative;
+      display:flex; justify-content:center;
+      transform: translateY(50%);
+      z-index:2;
+    }
+    .avatar{
+      width: 132px; height:132px; border-radius:50%;
+      border:6px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      object-fit: cover; object-position: center;
+      background:#ddd;
+    }
+    .content{ padding: 84px 22px 22px; text-align:center; }
+    .name{ font-size: 22px; font-weight: 800; line-height:1.2; margin: 6px 0 4px; }
+    .role{ color: var(--accent); font-weight:600; margin:0 0 16px; }
+    .list{ display:grid; gap:12px; margin: 14px 0 10px; }
+    .item{ display:flex; align-items:center; gap:10px; justify-content:center; }
+    .item a{ color: var(--text); text-decoration:none; font-weight:500; }
+    .item a:hover{ text-decoration:underline; }
+    .muted{ color: var(--muted); }
+    .actions{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:18px 0 2px; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:12px 14px; border-radius:14px; border:1px solid rgba(15,110,166,.18);
+      background:#fff; color:var(--text); font-weight:600; text-decoration:none;
+      box-shadow: 0 3px 10px rgba(0,0,0,.06);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.09); }
+    .footer{ margin-top: 14px; padding-bottom: 8px; }
+    @media (min-width: 520px){
+      :root{ --card-w: 420px; }
+      .banner{ height: 168px; }
+      .avatar{ width:146px; height:146px; }
+      .content{ padding-top: 94px; }
+      .name{ font-size:24px; }
+    }
+    .icon{ width:18px; height:18px; display:inline-block; }
+  </style>
+</head>
+<body>
+  <main class="card" role="article" aria-label="Tarjeta de contacto Arktic">
+    <div class="banner">
+      <div class="logo" aria-label="Arktic">ARKTIC</div>
+    </div>
+    <div class="avatar-wrap">
+      <img class="avatar" src="./assets/fotoro.jpg" alt="Foto de perfil de Rocío Paralba Ruiz" />
+    </div>
+    <section class="content">
+      <h1 class="name">Rocio Paralba Ruiz</h1>
+      <p class="role">Head of Experience</p>
+      <div class="list" aria-label="Datos de contacto">
+        <div class="item"><a href="mailto:rocio.peralba@arktic.es">rocio.peralba@arktic.es</a></div>
+        <div class="item"><a href="tel:+34629205660">+34 629 205 660</a></div>
+        <div class="item"><a href="https://www.arktic.es" target="_blank">www.arktic.es</a></div>
+        <div class="item"><a href="https://www.linkedin.com/in/USERNAME" target="_blank">LinkedIn</a></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
