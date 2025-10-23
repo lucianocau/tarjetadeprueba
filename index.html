@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tarjeta Rocio Peralba</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #ffffff;
+    }
+    .card {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: -10px; /* Minimal upward shift */
+      left: 0;
+    }
+    .hotspot {
+      position: absolute;
+      background: transparent;
+      z-index: 2;
+    }
+    /* Ajustes de posiciones */
+    #email { top: 62.5%; left: 14%; width: 72%; height: 4.5%; }
+    #phone { top: 68.5%; left: 14%; width: 72%; height: 4.5%; }
+    #linkedin { top: 74.2%; left: 14%; width: 72%; height: 4.5%; }
+    #web { top: 79.5%; left: 14%; width: 72%; height: 4.5%; }
+    #save {
+      bottom: 7.5%; left: 14%;
+      width: 72%; height: 6.5%;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="Card.png" alt="Tarjeta Rocio Peralba" />
+
+    <a id="email" class="hotspot" href="mailto:rocio.peralba@arktic.es"></a>
+    <a id="phone" class="hotspot" href="tel:+34629205660"></a>
+    <a id="linkedin" class="hotspot" href="https://www.linkedin.com/in/rocioperalba/" target="_blank"></a>
+    <a id="web" class="hotspot" href="https://www.arktic.es" target="_blank"></a>
+    <a id="save" class="hotspot" href="rocio_peralba.vcf" download></a>
+  </div>
+</body>
+</html>
